@@ -1,0 +1,25 @@
+body{
+    background-color: yellowgreen;  
+}
+#daRedBox {
+    position: absolute;
+    top:25%;
+    height: 50%;
+    width: 100%;
+    background-color: crimson;
+        
+    }
+.daBlueBox {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: aqua;
+}
+h3 {
+    cursor: crosshair;
+    position: relative;
+    text-align: center;
+    top: 25%;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<body style="background-color:rgb(106, 160, 222)"></body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEOG 456 Spring 2024</title>
+  
+</head>
+
+<style>
+    body{
+        background-color: yellowgreen;  
+    }
+    #daRedBox {
+        position: absolute;
+        top:25%;
+        height: 50%;
+        width: 100%;
+        background-color: crimson;
+            
+        }
+    .daBlueBox {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 50%;
+        background-color: aqua;
+    }
+    h3 {
+        cursor: crosshair;
+        position: relative;
+        text-align: center;
+        top: 25%;
+    }
+</style>
+<body>
+    <div id="daRedBox">
+        <div class="daBlueBox">
+            <h3 onClick="daAlert()">TEST1</h3>
+        </div>
+    </div>
+    
+
+    <h1>GEOG 456 Spring 2024</h1>
+    <h2>Abby Burris</h2>
+
+
+    </div>
+   
+   
+    
+</body>
+<script>
+    function daAlert() {
+        var daTime = Date();
+        alert("Testing2, today is :" + daTime);
+    }
+</script>  
