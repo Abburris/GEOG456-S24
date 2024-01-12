@@ -1,4 +1,6 @@
 function daAlert() {
-    var daTime = Date();
-    alert("Testing2, today is :" + daTime);
-} 
+    alert("Hello there");
+}
+function divClick() {
+    console.log('the div was clicked')
+}
