@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin="">
+    </script>
+
+<style>
+    #map { height: 500px; width: 500px;}
+</style>
+<body style="background-color: lavender;">
+    <h1 style="color:rgb(47, 26, 131)"> Asheville North Carolina</h1>
+    <div id="map"></div> 
+    <script>
+        var map = L.map('map').setView([35.56881825654513, -82.55624771118165], 13);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var marker = L.marker([35.54074723730462, -82.55328923463823]).addTo(map);
+        marker.bindPopup("<b> Builtmore House </b><br> built a long time ago.").openPopup();
+
+
+    </script>
+    <map>
+       
+   
+</body>
+</html>
