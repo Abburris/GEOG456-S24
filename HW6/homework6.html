@@ -1,0 +1,59 @@
+<html>
+<head>
+<style>
+table {
+  font-family: 'Times New Roman', Times;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ca9ad7;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dbb7e2;
+}
+</style>
+</head>
+<body>
+
+<h2>IUCN Redlist Species</h2>
+
+<table id="myTable">
+  <tr>
+    <th>Scientific Name</th>
+    <th>Year Recorded</th>
+    <th>Coordinates</th>
+
+  </tr>
+  <tr>
+  
+  </tr>
+  
+  </tr>
+</table>
+
+</body>
+<script src="IUCN_list.js"></script>
+<script>
+  var x = document.getElementById('myTable')
+  for (var i =0; i<data.features.length; i++) {
+    var myNewRow = document.createElement('tr')
+    var myNewCell1 = document.createElement('td')
+    var myNewCell2 = document.createElement('td')
+    var myNewCell3 = document.createElement('td')
+    myNewCell1.innerText = data.features[i].properties.sci_name
+    myNewCell2.innerText = data.features[i].properties.event_year
+    myNewCell3.innerText = data.features[i].geometry.coordinates
+    myNewRow.append(myNewCell1)
+    myNewRow.append(myNewCell2)
+    myNewRow.append(myNewCell3)
+    x.append(myNewRow)
+  }
+    
+</script>
+</html>
+
