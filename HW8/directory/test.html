@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Images with a Button</title>
+<style>
+    .container {
+        width: 100%;
+        max-width: 900px; 
+        text-align: center;
+        position: relative;
+        transform: translate(20%);
+        
+    }
+    .image {
+        display: none;
+        width: 100%;
+        height: auto;
+    }
+    
+    .container2 {
+        max-width: 1300px;
+        margin: 1 auto;
+        padding: 20px;
+        text-align: center;
+    }
+    .paragraph {
+        font-size: 16px; 
+        line-height: 1.5; 
+            color: #174700; 
+        margin-bottom: 20px; 
+        text-align: center;}  
+</style>
+</head>
+
+<body style="background-color: #d1ffc2;">
+
+<div class="container2">
+    <h1 style="color: #174700;"> Image Changing Button</h1>
+    <p class="paragraph" style="color: #174700;"> For this page, I created a button that changes the displayed photo and year in 
+        which the photo was taken. Using this method, we can see how stark and widespread the landscape changes 
+        in Frisco really are. These images show that the landscape in 2005, 2012, and 2018, consecutively. 
+    </p>
+
+</div>
+
+<div class="container" >
+    <img src="2005.png" alt="2005" class="image" id="image1" style="display: block;">
+    <img src="2020.png" alt="2020" class="image before" id="image2">
+    <img src="2022.png" alt="2022" class="image" id="image3">
+    <div id="text1" class="text after">Weaverville in 2005</div>
+    <div id="text2" class="text before" style="display: none;">2020</div>
+    <div id="text3" class="text before" style="display: none;">Weaverville in 2022</div>
+    <button onclick="changeImage()">Button to Change Image</button>
+</div>
+
+<script>
+    var currentImageIndex = 1;
+    var totalImages = 3;
+    var texts = ["Weaverville in 2005", "2020", "Weaverville in 2022"];
+
+
+    function changeImage() {
+        var currentImage = document.getElementById("image" + currentImageIndex);
+        var nextImageIndex = currentImageIndex === totalImages ? 1 : currentImageIndex + 1;
+        var nextImage = document.getElementById("image" + nextImageIndex);
+
+        currentImage.style.display = "none";
+        nextImage.style.display = "block";
+
+        currentImageIndex = nextImageIndex;
+        document.getElementById("text" + currentImageIndex).innerText = texts[currentImageIndex - 1];
+    }
+</script>
+
+
+
+</body>
+</html>

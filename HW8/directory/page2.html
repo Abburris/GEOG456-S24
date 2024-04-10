@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Change</title>
+
+    
+    <style>
+        img{
+            position: absolute;
+        }
+    </style>
+
+    <style>
+    
+        body {
+            background-color: #f1daff;
+            color: #1c0053;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;}
+    
+        .paragraph {
+            font-size: 16px; 
+            line-height: 1.5; 
+            color: #1c0053; 
+            margin-bottom: 20px; 
+            text-align: center;}
+
+        
+        div#image_container{
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+         }
+
+        img{
+            height: 60%;
+            position: absolute;
+            left: 0;
+        }
+        #before{
+            z-index: 1;
+            opacity: 1;
+        }
+        #after{
+            z-index: 3;
+            opacity: 0;
+        }
+        datalist {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 400px;
+            }
+
+        option {
+            padding: 0;
+            }
+
+        input {
+            width: 400px;
+            margin: 0;
+            }
+        label[for="year"] {
+            font-weight: bold;
+            font-size: 24px;
+        }
+        label[for="year"] {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .before-after {
+        flex: 1;
+        text-align: center;
+        font-weight: bold;   
+
+    }
+    </style>
+</head>
+    <div class= "paragraph">
+        <h1> Changing the year using an opacity slider</h1>  
+      <p> 
+      </p>
+   
+    <label for="year">Weaverville</label><br />
+    <span class="before-after">2005</span>
+    <input type="range" id="year" name="year" list="tickmarks" value="0" oninput="myFunction(this.value)"/>
+    <span class="before-after">2022</span>
+    </datalist>
+
+
+    <div id="image_container">
+            <img id="after"  src="2022.png" alt="">
+            <img id="before" src="2005!.png" alt="">
+
+        </div>
+    <script>
+        function myFunction(e) {
+            console.log(e)
+            document.getElementById("after").style.opacity = e/100;
+        }
+        </script>
+    
+</html>

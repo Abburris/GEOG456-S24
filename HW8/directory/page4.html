@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Images with a Button</title>
+<style>
+    .container {
+        width: 100%;
+        max-width: 900px; 
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        
+    }
+    .image {
+        display: none;
+        width: 100%;
+        height: auto;
+    }
+    
+    .container2 {
+        max-width: 1300px;
+        margin: 1 auto;
+        padding: 20px;
+        text-align: center;
+    }
+    .paragraph {
+        font-size: 16px; 
+        line-height: 1.5; 
+            color: #1c0053;; 
+        margin-bottom: 20px; 
+        text-align: center;}  
+</style>
+</head>
+
+<body style="background-color: #f1daff">
+
+<div class="container2">
+    <h1 style="color: #1c0053;">Changing year using a button</h1>
+    <p class="paragraph" style="color: #1c0053;"> The button shows the Weaverville shopping center in 2005, 2020, and 2022. 
+        The images show how this shopping center has continued to grow over the past two decades, adding extra shops and apartment complexes
+    </p>
+
+</div>
+
+<div class="container" >
+    <img src="2022.png" alt="2022" class="image" id="image1">
+    <img src="2005!.png" alt="2005" class="image" id="image2">
+    <img src="2020.png" alt="2020" class="image" id="image3">
+    <div id="text"></div>
+    <button onclick="changeImage()">Click to change year</button>
+</div>
+
+<script>
+    var currentImageIndex = 1;
+    var totalImages = 3;
+    var texts = ["Weaverville in 2022", "Weaverville in 2005", "Weaverville in 2020"];
+
+
+    function changeImage() {
+        currentImageIndex = (currentImageIndex % totalImages) + 1;
+        var currentImage = document.getElementById("image" + currentImageIndex);
+        var previousImageIndex = currentImageIndex === 1 ? totalImages : currentImageIndex - 1;
+        var previousImage = document.getElementById("image" + previousImageIndex);
+
+        currentImage.style.display = "block";
+        previousImage.style.display = "none";
+
+        document.getElementById("text").innerText = texts[currentImageIndex - 1];
+    }
+</script>
+
+</body>
+</html>
